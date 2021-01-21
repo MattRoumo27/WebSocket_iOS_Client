@@ -16,6 +16,8 @@ final class SocketService: ObservableObject  {
     
     @Published var messages = [String]()
     @Published var handleCurrentTyping = [String]()
+    @Published var participantsList = [String : String]()
+    @Published var userName = ""
     
     init() {
         configureSocket()
@@ -35,6 +37,7 @@ final class SocketService: ObservableObject  {
             
             self.receiveChat()
             self.receiveTypingNotification()
+            self.receiveParticipantsList()
         }
         
         socket.connect()
@@ -59,6 +62,26 @@ final class SocketService: ObservableObject  {
         }
         
         socket.emit("typing", hand)
+    }
+    
+    func sendUsername(hand: String) {
+        guard let socket = socket else {
+            print("sendUserName: found nil value for socket")
+            return
+        }
+        
+        socket.emit("registerName", hand)
+        self.userName = hand
+    }
+    
+    func askForParticipantsList() {
+        guard let socket = socket else {
+            print("askForParticipantsList: found nil value for socket")
+            return
+        }
+        
+        print("Asking for list of participants")
+        socket.emit("participantsList")
     }
     
     // MARK: - Listening for Data
@@ -94,6 +117,30 @@ final class SocketService: ObservableObject  {
         socket.on("typing") { [weak self] (data, ack) in
             if let data = data[0] as? String {
                 self?.handleCurrentTyping.append(data)
+            }
+        }
+    }
+    
+    func receiveParticipantsList() {
+        guard let socket = socket else {
+            print("receiveParticipantList: found nil value for socket")
+            return
+        }
+        
+        // Listen for the participants list from the server
+        socket.on("participantList") { [weak self] (data, ack) in
+            if let data = data[0] as? [String : String] {
+                guard let self = self else {
+                    return
+                }
+                
+                var userList = data
+                
+                // Removing this client's name from the list of participants received
+                if let index = userList.firstIndex(where: { $0.value == self.userName }) {
+                    userList.remove(at: index)
+                }
+                self.participantsList = userList
             }
         }
     }

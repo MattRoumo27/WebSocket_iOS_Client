@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9AAC22525B9B0A400E26F82 /* JoinChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAC22425B9B0A400E26F82 /* JoinChat.swift */; };
+		C9AAC22825B9B0E200E26F82 /* TextFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAC22725B9B0E200E26F82 /* TextFieldAlert.swift */; };
+		C9AAC22B25B9F95900E26F82 /* ChatTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAC22A25B9F95900E26F82 /* ChatTableView.swift */; };
+		C9AAC22F25B9FC8400E26F82 /* ParticipantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AAC22E25B9FC8400E26F82 /* ParticipantListView.swift */; };
 		C9C39C4425B10C09007C634D /* WebSocket_ChatClientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C39C4325B10C09007C634D /* WebSocket_ChatClientApp.swift */; };
 		C9C39C4625B10C09007C634D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C39C4525B10C09007C634D /* ContentView.swift */; };
 		C9C39C4825B10C0D007C634D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C39C4725B10C0D007C634D /* Assets.xcassets */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C9AAC22425B9B0A400E26F82 /* JoinChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChat.swift; sourceTree = "<group>"; };
+		C9AAC22725B9B0E200E26F82 /* TextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlert.swift; sourceTree = "<group>"; };
+		C9AAC22A25B9F95900E26F82 /* ChatTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableView.swift; sourceTree = "<group>"; };
+		C9AAC22E25B9FC8400E26F82 /* ParticipantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantListView.swift; sourceTree = "<group>"; };
 		C9C39C4025B10C09007C634D /* WebSocket_ChatClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebSocket_ChatClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C39C4325B10C09007C634D /* WebSocket_ChatClientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket_ChatClientApp.swift; sourceTree = "<group>"; };
 		C9C39C4525B10C09007C634D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +66,10 @@
 			children = (
 				C9C39C4325B10C09007C634D /* WebSocket_ChatClientApp.swift */,
 				C9C39C4525B10C09007C634D /* ContentView.swift */,
+				C9AAC22A25B9F95900E26F82 /* ChatTableView.swift */,
+				C9AAC22E25B9FC8400E26F82 /* ParticipantListView.swift */,
+				C9AAC22425B9B0A400E26F82 /* JoinChat.swift */,
+				C9AAC22725B9B0E200E26F82 /* TextFieldAlert.swift */,
 				C9C39C5825B1F0FC007C634D /* SocketService.swift */,
 				C9C39C4725B10C0D007C634D /* Assets.xcassets */,
 				C9C39C4C25B10C0D007C634D /* Info.plist */,
@@ -149,7 +161,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AAC22825B9B0E200E26F82 /* TextFieldAlert.swift in Sources */,
 				C9C39C4625B10C09007C634D /* ContentView.swift in Sources */,
+				C9AAC22B25B9F95900E26F82 /* ChatTableView.swift in Sources */,
+				C9AAC22F25B9FC8400E26F82 /* ParticipantListView.swift in Sources */,
+				C9AAC22525B9B0A400E26F82 /* JoinChat.swift in Sources */,
 				C9C39C4425B10C09007C634D /* WebSocket_ChatClientApp.swift in Sources */,
 				C9C39C5925B1F0FC007C634D /* SocketService.swift in Sources */,
 			);

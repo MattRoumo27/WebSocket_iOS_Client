@@ -12,6 +12,7 @@ struct WebSocket_ChatClientApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(SocketService())
         }
     }
 }
